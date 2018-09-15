@@ -29,8 +29,9 @@ public class FacebookAPIController {
 			return "redirect:/connect/facebook";
 		}
 
-		String[] fields = { "significant_other", "relationship_status", "first_name", "last_name", "name" };
+		String[] fields = { "significant_other", "relationship_status", "first_name", "last_name", "name", "work" };
 		User userProfile = facebook.fetchObject("me", User.class, fields);
+
 		model.addAttribute("facebookProfile", userProfile);
 
 		return "hello";
